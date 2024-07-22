@@ -1,3 +1,5 @@
+const resultado = document.querySelector('.resultado');
+
 class NotasAtletas{
     constructor(listaAtletas){
         this.listaAtletas = listaAtletas;
@@ -16,10 +18,9 @@ class NotasAtletas{
     mostraAtletas(){
         this.ordenaNotas();
         this.listaAtletas.forEach(atleta => {
-            console.log(`
-            Atleta: ${atleta.nome}
-            Notas Obtidas: ${atleta.notas}
-            Média Válida: ${this.mediaDasNotas(atleta)}`);
+            resultado.innerHTML += (`<dt>Atleta: ${atleta.nome}</dt>
+            <dd>Notas Obtidas: ${atleta.notas.join(', ')}<br>
+            Média Válida: ${this.mediaDasNotas(atleta)}</dd>`);
         });
     }
 }
@@ -42,6 +43,5 @@ let atletas = [
         notas: [10, 10, 10, 9, 9.5]
     }
 ];
-
 let notasAtletas = new NotasAtletas(atletas);
 notasAtletas.mostraAtletas();
