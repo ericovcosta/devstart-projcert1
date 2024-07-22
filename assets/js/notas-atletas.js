@@ -15,12 +15,12 @@ class NotasAtletas{
             let notasValidas = this.removeMaiorEMenorNota(atleta.notas);
             return notasValidas.reduce((a, b) => a + b)/(notasValidas.length);
     }
-    mostraAtletas(){
+    mostraAtletas() {
         this.ordenaNotas();
         this.listaAtletas.forEach(atleta => {
-            resultado.innerHTML += (`<dt>Atleta: ${atleta.nome}</dt>
+            resultado.innerHTML += `<dt>Atleta: ${atleta.nome}</dt>
             <dd>Notas Obtidas: ${atleta.notas.join(', ')}<br>
-            Média Válida: ${this.mediaDasNotas(atleta)}</dd>`);
+            Média Válida: ${this.mediaDasNotas(atleta)}</dd>`
         });
     }
 }
